@@ -1,0 +1,49 @@
+[project]
+name = "algorithm-comparison-analysis"
+version = "1.0.0"
+description = "專業的演算法比較分析工具"
+authors = [
+    {name = "Algorithm Comparison Team"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "matplotlib>=3.8.0",
+    "numpy>=1.24.0", 
+    "pandas>=2.0.0",
+    "seaborn>=0.12.0",
+    "plotly>=5.15.0",
+    "openpyxl>=3.1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/algorithm-comparison/analysis"
+Documentation = "https://algorithm-comparison.readthedocs.io"
+Repository = "https://github.com/algorithm-comparison/analysis.git"
+"Bug Tracker" = "https://github.com/algorithm-comparison/analysis/issues"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
